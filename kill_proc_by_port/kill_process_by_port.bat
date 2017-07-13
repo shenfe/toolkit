@@ -5,7 +5,7 @@ SETLOCAL ENABLEDELAYEDEXPANSION
 cls
 
 set PORT=
-set /p=ÊäÈë¶Ë¿ÚºÅ£º<nul
+set /p=è¾“å…¥ç«¯å£å·ï¼š<nul
 set /p PORT=
 if /i "%PORT%"=="q" exit
 if "%PORT%"=="" exit
@@ -13,7 +13,7 @@ call :getnetbyport "%PORT%"
 echo END. & pause>nul & goto start
 
 :getnetbyport
-::¸ù¾İ¶Ë¿ÚºÅ»ñÈ¡ netstat ĞÅÏ¢£¬ÌáÈ¡½ø³ÌºÅ£¬É±ËÀ½ø³Ì
+::æ ¹æ®ç«¯å£å·è·å– netstat ä¿¡æ¯ï¼Œæå–è¿›ç¨‹å·ï¼Œæ€æ­»è¿›ç¨‹
 if not "%~1"=="" (
     set PORT=%~1
     for /f "delims=" %%z in ('netstat -ano^|find /i ":!PORT! "') do (
@@ -30,7 +30,7 @@ if not "%~1"=="" (
 goto :eof
 
 :getNetInfo
-::½« netstat -ano µÄÄ³Ò»ĞĞ·Ö¸ô³É²»Í¬µÄ±äÁ¿
+::å°† netstat -ano çš„æŸä¸€è¡Œåˆ†éš”æˆä¸åŒçš„å˜é‡
 ::call :getNetInfo "<netstat output line>" tProto tLocalAdd tForeignAdd tState tPID
 if not "%~1"=="" (
     for /f "tokens=1,2,3,4,5 delims= " %%i in ("%~1") do (
